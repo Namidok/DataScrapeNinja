@@ -73,7 +73,11 @@ export class MemStorage implements IStorage {
 
   async createChatMessage(insertMessage: InsertChatMessage): Promise<ChatMessage> {
     const id = this.messageCurrentId++;
-    const message: ChatMessage = { ...insertMessage, id };
+    const message: ChatMessage = { 
+      ...insertMessage, 
+      id,
+      userId: insertMessage.userId || null 
+    };
     this.messages.set(id, message);
     return message;
   }
@@ -97,26 +101,26 @@ export class MemStorage implements IStorage {
 
   async initializeChatResponses(): Promise<void> {
     const defaultResponses: InsertChatResponse[] = [
-      { keyword: "who are you", response: "I'm a portfolio chatbot designed to answer questions about the portfolio owner." },
-      { keyword: "name", response: "This is John Doe's portfolio website. He's a passionate web developer with expertise in modern frontend technologies." },
-      { keyword: "born", response: "John was born in New York City and grew up in the suburbs." },
-      { keyword: "education", response: "John graduated with a Computer Science degree from MIT in 2018." },
-      { keyword: "work experience", response: "John has worked at several tech companies including Google and Microsoft as a frontend developer." },
-      { keyword: "hobbies", response: "John enjoys hiking, photography, and coding side projects during his free time." },
-      { keyword: "projects", response: "John has worked on several projects including e-commerce websites, data visualization dashboards, and mobile applications. Check out the Projects section for more details!" },
-      { keyword: "contact", response: "You can contact John through the social media links on the Contact page or send a message using the contact form." },
-      { keyword: "skills", response: "John's technical skills include JavaScript, TypeScript, React, Next.js, Node.js, and various UI frameworks like Tailwind CSS." },
-      { keyword: "hello", response: "Hello! How can I help you learn more about John today?" },
-      { keyword: "hi", response: "Hi there! Feel free to ask me anything about John or his portfolio." },
-      { keyword: "linkedin", response: "You can find John's LinkedIn profile in the Contact section of this website." },
-      { keyword: "github", response: "John's GitHub username is johndoe. You can check his repositories for code samples and projects." },
-      { keyword: "instagram", response: "John shares his photography work on Instagram. Find the link in the Contact section." },
-      { keyword: "resume", response: "You can download John's resume from the About page." },
-      { keyword: "current work", response: "Currently, John is working as a Senior Frontend Developer at a startup focusing on AI-powered web applications." },
-      { keyword: "frontend", response: "John specializes in frontend development with React, TypeScript, and modern CSS frameworks." },
-      { keyword: "backend", response: "While primarily a frontend developer, John is also skilled in Node.js and Express for backend development." },
-      { keyword: "location", response: "John is currently based in San Francisco, California." },
-      { keyword: "default", response: "I don't have specific information about that. Feel free to ask about John's experience, skills, projects, or contact information!" }
+      { keyword: "who are you", response: "I'm a portfolio chatbot designed to answer questions about Srikar Kodi, the portfolio owner." },
+      { keyword: "name", response: "This is Srikar Kodi's portfolio website. He's a passionate Python developer and data engineer with expertise in ETL processes and full-stack development." },
+      { keyword: "born", response: "Srikar is from Visakhapatnam, Andhra Pradesh, India." },
+      { keyword: "education", response: "Srikar graduated with a Bachelor's degree in Computer Science & Engineering from MVGR College of Engineering." },
+      { keyword: "work experience", response: "Srikar has worked at Vavili Technologies as a Software Developer Trainee and at ValueLabs as a Software Engineer." },
+      { keyword: "hobbies", response: "Srikar enjoys developing AI projects, working on data engineering solutions, and creating innovative software applications." },
+      { keyword: "projects", response: "Srikar has worked on several projects including Cipher (personal chatbot assistant), Dataset Translator App, and Data Engineer with Python. Check out the Projects section for more details!" },
+      { keyword: "contact", response: "You can contact Srikar through GitHub and LinkedIn links on the Contact page or send a message using the contact form." },
+      { keyword: "skills", response: "Srikar's technical skills include Python, SQL, Flask, Django, PostgreSQL, AWS, ETL development, and data engineering." },
+      { keyword: "hello", response: "Hello! How can I help you learn more about Srikar today?" },
+      { keyword: "hi", response: "Hi there! Feel free to ask me anything about Srikar or his portfolio." },
+      { keyword: "linkedin", response: "You can find Srikar's LinkedIn profile in the Contact section of this website." },
+      { keyword: "github", response: "Srikar's GitHub username is Namidok. You can check his repositories for code samples and projects." },
+      { keyword: "resume", response: "You can learn about Srikar's experience and skills on the About page." },
+      { keyword: "current work", response: "Srikar is a Python Developer and Data Engineer with experience in ETL processes and full-stack development." },
+      { keyword: "data engineering", response: "Srikar specializes in data engineering, building ETL pipelines, and data transformation solutions using Python." },
+      { keyword: "python", response: "Srikar is proficient in Python programming and has developed several applications and data solutions with it." },
+      { keyword: "chatbot", response: "Srikar has developed 'Cipher', a personal chatbot assistant, and has experience with NLP and conversational AI." },
+      { keyword: "location", response: "Srikar is currently based in Visakhapatnam, Andhra Pradesh, India." },
+      { keyword: "default", response: "I don't have specific information about that. Feel free to ask about Srikar's experience, skills, projects, or contact information!" }
     ];
 
     // Clear existing responses and add defaults
