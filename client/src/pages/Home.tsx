@@ -36,7 +36,7 @@ export default function Home() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="min-h-[90vh] flex items-center justify-center relative overflow-hidden dot-grid">
+      <section className="min-h-[90vh] flex items-center justify-center relative overflow-hidden hero-bg">
         <div className="absolute inset-0 z-0">
           <motion.div
             className="absolute top-20 right-20 w-72 h-72 bg-primary/10 rounded-full filter blur-3xl"
@@ -76,7 +76,7 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className="gradient-text">John Doe</span>
+            <span className="gradient-text">Srikar Kodi</span>
           </motion.h1>
           
           <motion.div 
@@ -138,7 +138,7 @@ export default function Home() {
       </section>
       
       {/* Brief intro section */}
-      <ParallaxSection className="py-24 bg-secondary">
+      <ParallaxSection className="py-24 bg-secondary about-bg">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold mb-12 gradient-text text-center">
             Crafting Digital Experiences
