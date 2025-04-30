@@ -21,7 +21,7 @@ export default function Chatbot({ onClose }: ChatbotProps) {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 0,
-      message: "Hello! I'm John's assistant. How can I help you today?",
+      message: "Hello! I'm Srikar's assistant. How can I help you today?",
       isBot: true,
       timestamp: new Date().toISOString()
     }
@@ -95,7 +95,7 @@ export default function Chatbot({ onClose }: ChatbotProps) {
         <div className="p-4 border-b border-border flex items-center justify-between">
           <div className="flex items-center">
             <Bot className="mr-2 h-5 w-5 text-primary" />
-            <h3 className="font-semibold">Chat with John's Assistant</h3>
+            <h3 className="font-semibold">Chat with Srikar's Assistant</h3>
           </div>
           <Button variant="ghost" size="icon" onClick={onClose}>
             <X className="h-5 w-5" />

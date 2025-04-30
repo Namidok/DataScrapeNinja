@@ -6,9 +6,8 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
   
   const socialLinks = [
-    { icon: <FaGithub />, href: "https://github.com/johndoe", label: "GitHub" },
-    { icon: <FaLinkedin />, href: "https://linkedin.com/in/johndoe", label: "LinkedIn" },
-    { icon: <FaInstagram />, href: "https://instagram.com/johndoe", label: "Instagram" }
+    { icon: <FaGithub />, href: "https://github.com/Namidok", label: "GitHub" },
+    { icon: <FaLinkedin />, href: "https://linkedin.com/in/srikar-kodi-046a631b2/", label: "LinkedIn" }
   ];
   
   const footerLinks = [
@@ -25,10 +24,10 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link href="/">
-              <a className="text-2xl font-bold gradient-text">John Doe</a>
+              <a className="text-2xl font-bold gradient-text">Srikar Kodi</a>
             </Link>
             <p className="mt-4 text-muted-foreground">
-              Web developer & UI/UX designer creating modern digital experiences.
+              Python Developer & Data Engineer specializing in ETL processes, data architecture, and full-stack development.
             </p>
             <div className="flex space-x-4 mt-6">
               {socialLinks.map((link, index) => (
@@ -66,10 +65,10 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
-            <p className="text-muted-foreground">San Francisco, California</p>
+            <p className="text-muted-foreground">Visakhapatnam, Andhra Pradesh, India</p>
             <p className="text-muted-foreground mt-2">
-              <a href="mailto:john@example.com" className="hover:text-primary">
-                john@example.com
+              <a href="mailto:kodisrikar@gmail.com" className="hover:text-primary">
+                kodisrikar@gmail.com
               </a>
             </p>
           </div>
@@ -77,7 +76,7 @@ export default function Footer() {
         
         <div className="border-t border-border mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} John Doe. All rights reserved.
+            © {currentYear} Srikar Kodi. All rights reserved.
           </p>
           
           <p className="text-sm text-muted-foreground mt-2 md:mt-0">

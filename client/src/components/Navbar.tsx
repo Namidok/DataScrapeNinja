@@ -42,7 +42,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <Link href="/">
-              <a className="text-xl md:text-2xl font-bold gradient-text">John Doe</a>
+              <a className="text-xl md:text-2xl font-bold gradient-text">Srikar Kodi</a>
             </Link>
             
             {/* Desktop Navigation */}
