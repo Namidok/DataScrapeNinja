@@ -11,22 +11,22 @@ export default function About() {
 
   const experiences = [
     {
-      period: "2022 - Present",
-      title: "Senior Frontend Developer",
-      company: "AI Tech Startup",
-      description: "Leading the frontend development of an AI-powered web application. Working with React, TypeScript, and modern CSS frameworks."
+      period: "2021 - Present",
+      title: "Data Engineer",
+      company: "Vavili Technologies",
+      description: "Designing and implementing ETL pipelines for data transformation and loading into PostgreSQL databases. Developing interactive dashboards and analytics tools for data visualization."
     },
     {
-      period: "2020 - 2022",
-      title: "Frontend Developer",
-      company: "Microsoft",
-      description: "Worked on the Microsoft Teams UI. Implemented new features and improved existing ones. Collaborated with designers and backend developers."
+      period: "2019 - 2021",
+      title: "Full Stack Developer",
+      company: "ValueLabs",
+      description: "Worked on developing web applications using Python, Flask, PostgreSQL, and React. Implemented API endpoints and database models. Designed user interfaces and improved frontend performance."
     },
     {
-      period: "2018 - 2020",
-      title: "Junior Web Developer",
-      company: "Google",
-      description: "Contributed to Google's internal tools. Gained experience with large-scale web applications and best practices."
+      period: "2018 - 2019",
+      title: "Junior Developer",
+      company: "Freelance Projects",
+      description: "Contributed to various projects including a personal chatbot assistant (Cipher) and TemplesWiki application. Developed skills in Python, web development, and NLP technologies."
     }
   ];
 
@@ -68,10 +68,10 @@ export default function About() {
                   I'm Srikar Kodi, a passionate data engineer and full-stack developer with experience in creating ETL pipelines, data warehousing solutions, and interactive web applications.
                 </p>
                 <p className="text-lg mb-6 text-muted-foreground">
-                  Born and raised in New York City, I've always been fascinated by the intersection of technology and creativity. This passion led me to pursue a Computer Science degree at MIT, where I graduated in 2018.
+                  Born and raised in Visakhapatnam, I've always been fascinated by the intersection of technology and data. This passion led me to pursue a Computer Science degree at MVGR College of Engineering, where I developed my skills in data engineering and web development.
                 </p>
                 <p className="text-lg mb-6 text-muted-foreground">
-                  Currently based in San Francisco, I'm working as a Senior Frontend Developer at an AI-focused startup, where I lead the development of innovative web applications.
+                  Currently based in Visakhapatnam, I'm working as a Data Engineer with expertise in building robust ETL pipelines and crafting interactive web applications that transform complex data into accessible insights.
                 </p>
                 
                 <div className="flex flex-wrap gap-4 mt-8">
@@ -126,10 +126,10 @@ export default function About() {
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              "JavaScript", "TypeScript", "React", "Next.js", 
-              "CSS/SCSS", "Tailwind CSS", "Node.js", "UI/UX Design",
-              "Git", "RESTful API", "GraphQL", "Responsive Design",
-              "Performance Optimization", "Accessibility", "Testing", "CI/CD"
+              "Python", "JavaScript", "SQL", "ETL Pipelines", 
+              "PostgreSQL", "Flask", "Django", "React",
+              "Git", "AWS", "Data Warehousing", "REST APIs",
+              "Data Visualization", "NLP", "Docker", "Linux"
             ].map((skill, index) => (
               <motion.div
                 key={skill}
@@ -186,11 +186,11 @@ export default function About() {
                   transition={{ type: "spring", stiffness: 400 }}
                 >
                   <p className="text-sm text-muted-foreground">2014 - 2018</p>
-                  <h3 className="text-xl font-bold mt-2">B.S. in Computer Science</h3>
-                  <p className="text-primary">Massachusetts Institute of Technology</p>
+                  <h3 className="text-xl font-bold mt-2">B.Tech in Computer Science</h3>
+                  <p className="text-primary">MVGR College of Engineering</p>
                   <p className="mt-3 text-muted-foreground">
-                    Focused on Human-Computer Interaction and Web Technologies.
-                    Graduated with honors.
+                    Focused on Data Structures, Databases, and Web Development.
+                    Developed strong programming fundamentals.
                   </p>
                 </motion.div>
                 
@@ -199,12 +199,12 @@ export default function About() {
                   whileHover={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
-                  <p className="text-sm text-muted-foreground">2019</p>
-                  <h3 className="text-xl font-bold mt-2">UI/UX Design Certification</h3>
-                  <p className="text-primary">Design Institute of San Francisco</p>
+                  <p className="text-sm text-muted-foreground">2020</p>
+                  <h3 className="text-xl font-bold mt-2">Data Engineering Professional</h3>
+                  <p className="text-primary">DataCamp Certification</p>
                   <p className="mt-3 text-muted-foreground">
-                    Specialized in user-centered design principles and 
-                    interactive prototyping methodologies.
+                    Specialized in ETL pipelines, PostgreSQL database management, 
+                    and data transformation techniques.
                   </p>
                 </motion.div>
               </div>
