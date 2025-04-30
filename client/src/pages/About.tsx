@@ -33,7 +33,7 @@ export default function About() {
   return (
     <div className="w-full">
       {/* Hero section */}
-      <section className="py-24 relative overflow-hidden dot-grid">
+      <section className="py-24 relative overflow-hidden about-bg">
         <div className="absolute inset-0 z-0">
           <motion.div
             className="absolute top-20 left-[20%] w-72 h-72 bg-primary/10 rounded-full filter blur-3xl"
@@ -65,7 +65,7 @@ export default function About() {
               <div>
                 <h2 className="text-2xl font-bold mb-6">Who I Am</h2>
                 <p className="text-lg mb-6 text-muted-foreground">
-                  I'm John Doe, a passionate frontend developer and UI/UX designer with over 5 years of experience in creating beautiful, functional, and user-centered digital experiences.
+                  I'm Srikar Kodi, a passionate data engineer and full-stack developer with experience in creating ETL pipelines, data warehousing solutions, and interactive web applications.
                 </p>
                 <p className="text-lg mb-6 text-muted-foreground">
                   Born and raised in New York City, I've always been fascinated by the intersection of technology and creativity. This passion led me to pursue a Computer Science degree at MIT, where I graduated in 2018.
@@ -120,7 +120,7 @@ export default function About() {
       </section>
       
       {/* Skills section */}
-      <AnimatedSection className="py-24 bg-secondary">
+      <AnimatedSection className="py-24 bg-secondary about-bg">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-12 text-center">Technical Skills</h2>
           
@@ -147,7 +147,7 @@ export default function About() {
       </AnimatedSection>
       
       {/* Experience section */}
-      <AnimatedSection className="py-24">
+      <AnimatedSection className="py-24 hero-bg">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-12 text-center">Work Experience</h2>
           
@@ -172,7 +172,7 @@ export default function About() {
       </AnimatedSection>
       
       {/* Education & Hobbies section */}
-      <AnimatedSection className="py-24 bg-secondary">
+      <AnimatedSection className="py-24 bg-secondary projects-bg">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Education */}
@@ -227,10 +227,14 @@ export default function About() {
                     key={hobby.name}
                     className="bg-card p-6 rounded-xl flex items-center gap-4 glow-border"
                     whileHover={{ scale: 1.05 }}
-                    transition={{ type: "spring", stiffness: 400 }}
+                    transition={{ 
+                      type: "spring", 
+                      stiffness: 400,
+                      duration: 0.4, 
+                      delay: index * 0.1 
+                    }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
                   >
                     <span className="text-3xl">{hobby.icon}</span>
                     <span className="text-lg">{hobby.name}</span>
