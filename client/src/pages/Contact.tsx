@@ -71,7 +71,7 @@ export default function Contact() {
   return (
     <div className="w-full">
       {/* Header section */}
-      <section className="py-24 relative overflow-hidden dot-grid">
+      <section className="py-24 relative overflow-hidden contact-bg">
         <div className="absolute inset-0 z-0">
           <motion.div
             className="absolute bottom-20 left-[30%] w-72 h-72 bg-primary/10 rounded-full filter blur-3xl"
@@ -117,7 +117,7 @@ export default function Contact() {
       </section>
       
       {/* Contact content */}
-      <AnimatedSection className="py-12 bg-secondary">
+      <AnimatedSection className="py-12 bg-secondary about-bg">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Form */}
@@ -259,7 +259,7 @@ export default function Contact() {
       </AnimatedSection>
       
       {/* FAQ section */}
-      <AnimatedSection className="py-24">
+      <AnimatedSection className="py-24 hero-bg">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-12 text-center">
             Frequently Asked Questions
