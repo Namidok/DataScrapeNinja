@@ -1,0 +1,259 @@
+import { motion } from "framer-motion";
+import AnimatedSection from "@/components/AnimatedSection";
+import { Link } from "wouter";
+import { Button } from "@/components/ui/button";
+import { FileDown, ChevronRight } from "lucide-react";
+import Chatbot from "@/components/Chatbot";
+import { useState } from "react";
+
+export default function About() {
+  const [showChat, setShowChat] = useState(false);
+
+  const experiences = [
+    {
+      period: "2022 - Present",
+      title: "Senior Frontend Developer",
+      company: "AI Tech Startup",
+      description: "Leading the frontend development of an AI-powered web application. Working with React, TypeScript, and modern CSS frameworks."
+    },
+    {
+      period: "2020 - 2022",
+      title: "Frontend Developer",
+      company: "Microsoft",
+      description: "Worked on the Microsoft Teams UI. Implemented new features and improved existing ones. Collaborated with designers and backend developers."
+    },
+    {
+      period: "2018 - 2020",
+      title: "Junior Web Developer",
+      company: "Google",
+      description: "Contributed to Google's internal tools. Gained experience with large-scale web applications and best practices."
+    }
+  ];
+
+  return (
+    <div className="w-full">
+      {/* Hero section */}
+      <section className="py-24 relative overflow-hidden dot-grid">
+        <div className="absolute inset-0 z-0">
+          <motion.div
+            className="absolute top-20 left-[20%] w-72 h-72 bg-primary/10 rounded-full filter blur-3xl"
+            animate={{
+              x: [0, 30, 0],
+              opacity: [0.3, 0.6, 0.3]
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              repeatType: "reverse"
+            }}
+          />
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              About <span className="gradient-text">Me</span>
+            </h1>
+            
+            <div className="h-1 w-20 bg-primary mb-10"></div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div>
+                <h2 className="text-2xl font-bold mb-6">Who I Am</h2>
+                <p className="text-lg mb-6 text-muted-foreground">
+                  I'm John Doe, a passionate frontend developer and UI/UX designer with over 5 years of experience in creating beautiful, functional, and user-centered digital experiences.
+                </p>
+                <p className="text-lg mb-6 text-muted-foreground">
+                  Born and raised in New York City, I've always been fascinated by the intersection of technology and creativity. This passion led me to pursue a Computer Science degree at MIT, where I graduated in 2018.
+                </p>
+                <p className="text-lg mb-6 text-muted-foreground">
+                  Currently based in San Francisco, I'm working as a Senior Frontend Developer at an AI-focused startup, where I lead the development of innovative web applications.
+                </p>
+                
+                <div className="flex flex-wrap gap-4 mt-8">
+                  <Button className="button-glow">
+                    <FileDown className="mr-2 h-5 w-5" /> Download Resume
+                  </Button>
+                  
+                  <Button variant="outline" onClick={() => setShowChat(true)}>
+                    Ask Me Anything
+                  </Button>
+                </div>
+              </div>
+              
+              <div>
+                <motion.div 
+                  className="relative border-2 border-primary/20 rounded-2xl overflow-hidden"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                >
+                  <div className="aspect-[3/4] bg-muted rounded-2xl flex items-center justify-center text-6xl">
+                    <motion.svg 
+                      viewBox="0 0 24 24" 
+                      width="100%" 
+                      height="100%" 
+                      className="text-primary/10"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.6, delay: 0.6 }}
+                    >
+                      <rect width="24" height="24" fill="none" stroke="currentColor" strokeWidth="0.4" />
+                      <circle cx="12" cy="8" r="5" fill="currentColor" />
+                      <path d="M21 24v-2a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v2" fill="currentColor" />
+                    </motion.svg>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <p className="text-xl font-bold bg-background/70 p-4 rounded-lg">
+                        [Profile Image]
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+      
+      {/* Skills section */}
+      <AnimatedSection className="py-24 bg-secondary">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-12 text-center">Technical Skills</h2>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              "JavaScript", "TypeScript", "React", "Next.js", 
+              "CSS/SCSS", "Tailwind CSS", "Node.js", "UI/UX Design",
+              "Git", "RESTful API", "GraphQL", "Responsive Design",
+              "Performance Optimization", "Accessibility", "Testing", "CI/CD"
+            ].map((skill, index) => (
+              <motion.div
+                key={skill}
+                className="bg-card p-4 rounded-xl text-center glow-border"
+                whileHover={{ y: -5 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+              >
+                {skill}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </AnimatedSection>
+      
+      {/* Experience section */}
+      <AnimatedSection className="py-24">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-12 text-center">Work Experience</h2>
+          
+          <div className="space-y-12 max-w-3xl mx-auto">
+            {experiences.map((exp, index) => (
+              <motion.div 
+                key={index}
+                className="relative pl-10 border-l-2 border-primary/30"
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <div className="absolute left-[-8px] top-0 w-4 h-4 rounded-full bg-primary"></div>
+                <p className="text-sm text-muted-foreground mb-1">{exp.period}</p>
+                <h3 className="text-xl font-bold">{exp.title}</h3>
+                <p className="text-lg text-primary mb-3">{exp.company}</p>
+                <p className="text-muted-foreground">{exp.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </AnimatedSection>
+      
+      {/* Education & Hobbies section */}
+      <AnimatedSection className="py-24 bg-secondary">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {/* Education */}
+            <div>
+              <h2 className="text-3xl font-bold mb-8">Education</h2>
+              
+              <div className="space-y-8">
+                <motion.div 
+                  className="bg-card p-6 rounded-xl glow-border"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
+                  <p className="text-sm text-muted-foreground">2014 - 2018</p>
+                  <h3 className="text-xl font-bold mt-2">B.S. in Computer Science</h3>
+                  <p className="text-primary">Massachusetts Institute of Technology</p>
+                  <p className="mt-3 text-muted-foreground">
+                    Focused on Human-Computer Interaction and Web Technologies.
+                    Graduated with honors.
+                  </p>
+                </motion.div>
+                
+                <motion.div 
+                  className="bg-card p-6 rounded-xl glow-border"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
+                  <p className="text-sm text-muted-foreground">2019</p>
+                  <h3 className="text-xl font-bold mt-2">UI/UX Design Certification</h3>
+                  <p className="text-primary">Design Institute of San Francisco</p>
+                  <p className="mt-3 text-muted-foreground">
+                    Specialized in user-centered design principles and 
+                    interactive prototyping methodologies.
+                  </p>
+                </motion.div>
+              </div>
+            </div>
+            
+            {/* Hobbies */}
+            <div>
+              <h2 className="text-3xl font-bold mb-8">Hobbies & Interests</h2>
+              
+              <div className="grid grid-cols-2 gap-6">
+                {[
+                  { name: "Photography", icon: "📷" },
+                  { name: "Hiking", icon: "🥾" },
+                  { name: "Coding Side Projects", icon: "💻" },
+                  { name: "Reading", icon: "📚" },
+                  { name: "Traveling", icon: "✈️" },
+                  { name: "Playing Guitar", icon: "🎸" }
+                ].map((hobby, index) => (
+                  <motion.div 
+                    key={hobby.name}
+                    className="bg-card p-6 rounded-xl flex items-center gap-4 glow-border"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ type: "spring", stiffness: 400 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                  >
+                    <span className="text-3xl">{hobby.icon}</span>
+                    <span className="text-lg">{hobby.name}</span>
+                  </motion.div>
+                ))}
+              </div>
+              
+              <div className="mt-8">
+                <Link href="/projects">
+                  <Button className="w-full button-glow">
+                    See My Projects <ChevronRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </AnimatedSection>
+      
+      {/* Chatbot */}
+      {showChat && (
+        <Chatbot onClose={() => setShowChat(false)} />
+      )}
+    </div>
+  );
+}
