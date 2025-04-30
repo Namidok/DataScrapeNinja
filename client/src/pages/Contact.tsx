@@ -56,21 +56,15 @@ export default function Contact() {
   const socialLinks = [
     {
       name: "GitHub",
-      url: "https://github.com/johndoe",
+      url: "https://github.com/Namidok",
       icon: <FaGithub className="w-6 h-6" />,
-      username: "@johndoe"
+      username: "@Namidok"
     },
     {
       name: "LinkedIn",
-      url: "https://linkedin.com/in/johndoe",
+      url: "https://linkedin.com/in/srikar-kodi-046a631b2/",
       icon: <FaLinkedin className="w-6 h-6" />,
-      username: "John Doe"
-    },
-    {
-      name: "Instagram",
-      url: "https://instagram.com/johndoe",
-      icon: <FaInstagram className="w-6 h-6" />,
-      username: "@johndoe"
+      username: "Srikar Kodi"
     }
   ];
 
@@ -246,17 +240,17 @@ export default function Contact() {
               
               <div className="mt-12 p-6 bg-card rounded-xl border border-border">
                 <h3 className="text-xl font-bold mb-4">Location</h3>
-                <p className="text-muted-foreground mb-2">San Francisco, California</p>
-                <p className="text-muted-foreground">United States</p>
+                <p className="text-muted-foreground mb-2">Visakhapatnam, Andhra Pradesh</p>
+                <p className="text-muted-foreground">India</p>
               </div>
               
               <div className="mt-8 p-6 bg-card rounded-xl border border-border">
                 <h3 className="text-xl font-bold mb-4">Email</h3>
                 <a 
-                  href="mailto:john@example.com" 
+                  href="mailto:kodisrikar@gmail.com" 
                   className="text-primary hover:underline"
                 >
-                  john@example.com
+                  kodisrikar@gmail.com
                 </a>
               </div>
             </div>
@@ -275,19 +269,19 @@ export default function Contact() {
             {[
               {
                 question: "What types of projects do you work on?",
-                answer: "I specialize in web applications, responsive websites, and UI/UX design. I primarily work with React, Next.js, and modern CSS frameworks like Tailwind."
+                answer: "I specialize in data engineering, ETL pipelines, and full-stack development. I primarily work with Python, Flask, Django, PostgreSQL, and AWS cloud services."
               },
               {
                 question: "Are you available for freelance work?",
                 answer: "Yes, I'm open to freelance opportunities, particularly for interesting projects that align with my skills and interests."
               },
               {
-                question: "What is your typical process for a new project?",
-                answer: "I start with understanding requirements, then move to wireframing and design. After approval, I proceed with development, testing, and deployment. I maintain clear communication throughout the process."
+                question: "What experience do you have with data pipelines?",
+                answer: "I have developed ETL pipelines using Python for data transformation and loading into PostgreSQL databases. I'm skilled in building data warehousing solutions and implementing efficient data processing workflows."
               },
               {
-                question: "How can I request a quote for my project?",
-                answer: "You can send me details about your project through the contact form on this page, and I'll get back to you with a quote as soon as possible."
+                question: "Do you have experience with NLP and chatbots?",
+                answer: "Yes, I've developed interactive chatbots with Natural Language Processing capabilities for applications like TemplesWiki. I've also created 'Cipher', a personal chatbot assistant powered by Python."
               }
             ].map((faq, index) => (
               <motion.div
