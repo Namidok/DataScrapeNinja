@@ -108,8 +108,6 @@ export default function Projects() {
               data engineering pipelines, and machine learning projects. Each project demonstrates 
               my expertise in Python development, natural language processing, and data science.
             </p>
-            
-
           </motion.div>
         </div>
       </section>
@@ -126,8 +124,6 @@ export default function Projects() {
               />
             ))}
           </div>
-          
-
           
           <div className="text-center mt-16">
             <Button onClick={() => setShowChat(true)} className="button-glow">
