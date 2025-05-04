@@ -65,13 +65,13 @@ export default function About() {
               <div>
                 <h2 className="text-2xl font-bold mb-6">Who I Am</h2>
                 <p className="text-lg mb-6 text-muted-foreground">
-                  I'm Srikar Kodi, a passionate data engineer and full-stack developer with experience in creating ETL pipelines, data warehousing solutions, and interactive web applications.
+                  I'm Srikar Kodi, with 3 years of professional work experience - 1 year in Quality Assurance and 2 years in Application Development. One of my notable works includes the development of www.templeswiki.com as a full stack developer.
                 </p>
                 <p className="text-lg mb-6 text-muted-foreground">
-                  Born and raised in Visakhapatnam, I've always been fascinated by the intersection of technology and data. This passion led me to pursue a Computer Science degree at MVGR College of Engineering, where I developed my skills in data engineering and web development.
+                  I completed my degree in Electronics and Communication Engineering at MVGR College of Engineering (2016-2020), where I built a strong foundation in technical skills and problem-solving abilities.
                 </p>
                 <p className="text-lg mb-6 text-muted-foreground">
-                  Currently based in Visakhapatnam, I'm working as a Data Engineer with expertise in building robust ETL pipelines and crafting interactive web applications that transform complex data into accessible insights.
+                  I'm deeply interested in AI technologies and how they are transforming the software development landscape. I believe AI integration will significantly enhance my career path, allowing me to build more intelligent and responsive applications that provide greater value to users.
                 </p>
                 
                 <div className="flex flex-wrap gap-4 mt-8">
@@ -185,12 +185,12 @@ export default function About() {
                   whileHover={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
-                  <p className="text-sm text-muted-foreground">2014 - 2018</p>
-                  <h3 className="text-xl font-bold mt-2">B.Tech in Computer Science</h3>
+                  <p className="text-sm text-muted-foreground">2016 - 2020</p>
+                  <h3 className="text-xl font-bold mt-2">B.Tech in Electronics and Communication</h3>
                   <p className="text-primary">MVGR College of Engineering</p>
                   <p className="mt-3 text-muted-foreground">
-                    Focused on Data Structures, Databases, and Web Development.
-                    Developed strong programming fundamentals.
+                    Focused on building a strong foundation in technical skills and electronics.
+                    Developed problem-solving abilities and project management.
                   </p>
                 </motion.div>
                 
