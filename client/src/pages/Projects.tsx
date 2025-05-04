@@ -3,11 +3,9 @@ import { useState } from "react";
 import AnimatedSection from "@/components/AnimatedSection";
 import ProjectCard from "@/components/ProjectCard";
 import { Button } from "@/components/ui/button";
-import { Filter } from "lucide-react";
 import Chatbot from "@/components/Chatbot";
 
 export default function Projects() {
-  const [filter, setFilter] = useState<string | null>(null);
   const [showChat, setShowChat] = useState(false);
 
   const projects = [
@@ -67,18 +65,8 @@ export default function Projects() {
     }
   ];
 
-  // Extract all unique tags from projects
-  const allTags = Array.from(
-    new Set(projects.flatMap(project => project.tags))
-  ).sort();
-
-  // Filter projects based on selected tag
-  const filteredProjects = filter
-    ? projects.filter(project => project.tags.includes(filter))
-    : projects;
-
   // Sort to show featured projects first
-  const sortedProjects = [...filteredProjects].sort((a, b) => {
+  const sortedProjects = [...projects].sort((a, b) => {
     if (a.featured && !b.featured) return -1;
     if (!a.featured && b.featured) return 1;
     return 0;
@@ -121,36 +109,7 @@ export default function Projects() {
               my expertise in Python development, natural language processing, and data science.
             </p>
             
-            {/* Filter buttons */}
-            <div className="mb-12">
-              <div className="flex items-center gap-2 mb-4">
-                <Filter className="h-5 w-5" />
-                <h2 className="text-lg font-medium">Filter by:</h2>
-              </div>
-              
-              <div className="flex flex-wrap gap-2">
-                <Button 
-                  variant={filter === null ? "default" : "outline"} 
-                  size="sm"
-                  onClick={() => setFilter(null)}
-                  className="rounded-full"
-                >
-                  All
-                </Button>
-                
-                {allTags.map(tag => (
-                  <Button 
-                    key={tag}
-                    variant={filter === tag ? "default" : "outline"} 
-                    size="sm"
-                    onClick={() => setFilter(tag)}
-                    className="rounded-full"
-                  >
-                    {tag}
-                  </Button>
-                ))}
-              </div>
-            </div>
+
           </motion.div>
         </div>
       </section>
@@ -168,19 +127,7 @@ export default function Projects() {
             ))}
           </div>
           
-          {filteredProjects.length === 0 && (
-            <div className="text-center py-12">
-              <p className="text-xl text-muted-foreground">
-                No projects match the selected filter.
-              </p>
-              <Button 
-                className="mt-4" 
-                onClick={() => setFilter(null)}
-              >
-                Clear Filter
-              </Button>
-            </div>
-          )}
+
           
           <div className="text-center mt-16">
             <Button onClick={() => setShowChat(true)} className="button-glow">
