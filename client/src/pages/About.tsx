@@ -11,22 +11,16 @@ export default function About() {
 
   const experiences = [
     {
-      period: "2021 - Present",
-      title: "Data Engineer",
+      period: "2023 - 2025",
+      title: "Application Developer",
       company: "Vavili Technologies",
-      description: "Designing and implementing ETL pipelines for data transformation and loading into PostgreSQL databases. Developing interactive dashboards and analytics tools for data visualization."
+      description: <>Designed full stack web applications, an avid member on working on our product <a href="https://www.templeswiki.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">TemplesWiki</a>.</>
     },
     {
-      period: "2019 - 2021",
-      title: "Full Stack Developer",
-      company: "ValueLabs",
-      description: "Worked on developing web applications using Python, Flask, PostgreSQL, and React. Implemented API endpoints and database models. Designed user interfaces and improved frontend performance."
-    },
-    {
-      period: "2018 - 2019",
-      title: "Junior Developer",
-      company: "Freelance Projects",
-      description: "Contributed to various projects including a personal chatbot assistant (Cipher) and TemplesWiki application. Developed skills in Python, web development, and NLP technologies."
+      period: "2022 - 2023",
+      title: "Trainee Software Engineer",
+      company: "Valuelabs",
+      description: "Worked as a Quality Assurance Engineer, developing and executing comprehensive test plans, collaborating closely with Product Managers on requirement analysis, and documenting test results to maintain high-quality software delivery standards."
     }
   ];
 
