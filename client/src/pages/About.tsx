@@ -197,12 +197,12 @@ export default function About() {
               
               <div className="grid grid-cols-2 gap-6">
                 {[
-                  { name: "Photography", icon: "📷" },
-                  { name: "Hiking", icon: "🥾" },
-                  { name: "Coding Side Projects", icon: "💻" },
+                  { name: "Football", icon: "⚽" },
+                  { name: "Cricket", icon: "🏏" },
+                  { name: "Films", icon: "🎬" },
                   { name: "Reading", icon: "📚" },
-                  { name: "Traveling", icon: "✈️" },
-                  { name: "Playing Guitar", icon: "🎸" }
+                  { name: "Travelling", icon: "✈️" },
+                  { name: "Music", icon: "🎵" }
                 ].map((hobby, index) => (
                   <motion.div 
                     key={hobby.name}
