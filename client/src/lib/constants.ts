@@ -29,16 +29,16 @@ export const personalInfo = {
 
 export const workExperience = [
   {
-    period: "May 2023 - Present",
+    period: "2023 - 2025",
     title: "Application Developer",
     company: "Vavili Technologies",
-    description: "Developing web applications as a Full Stack Developer, building and optimizing microservices. Creating interactive chatbots with NLP, and building ETL pipelines for multi-language support."
+    description: "Designed full stack web applications, an avid member on working on our product <a href=\"https://www.templeswiki.com\" target=\"_blank\" rel=\"noopener noreferrer\" className=\"text-primary hover:underline\">TemplesWiki</a>."
   },
   {
-    period: "Jan 2022 - Feb 2023",
+    period: "2022 - 2023",
     title: "Trainee Software Engineer",
-    company: "ValueLabs",
-    description: "Enhanced software modules by addressing bugs and optimizing performance. Conducted thorough testing and developed detailed test plans to ensure application quality."
+    company: "Valuelabs",
+    description: "Worked as a Quality Assurance Engineer, creating comprehensive test plans and collaborating with Product Managers to ensure high-quality software delivery."
   }
 ];
 
@@ -52,12 +52,12 @@ export const education = [
 ];
 
 export const hobbies = [
-  { name: "Data Engineering", icon: "🔧" },
-  { name: "Python Development", icon: "🐍" },
-  { name: "Building ETL Pipelines", icon: "⚙️" },
-  { name: "NLP & Chatbots", icon: "🤖" },
-  { name: "SQL & Databases", icon: "💾" },
-  { name: "AWS Cloud", icon: "☁️" }
+  { name: "Football", icon: "⚽" },
+  { name: "Cricket", icon: "🏏" },
+  { name: "Films", icon: "🎬" },
+  { name: "Reading", icon: "📚" },
+  { name: "Travelling", icon: "✈️" },
+  { name: "Music", icon: "🎵" }
 ];
 
 export const projects = [

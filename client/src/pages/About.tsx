@@ -75,9 +75,11 @@ export default function About() {
                 </p>
                 
                 <div className="flex flex-wrap gap-4 mt-8">
-                  <Button className="button-glow">
-                    <FileDown className="mr-2 h-5 w-5" /> Download Resume
-                  </Button>
+                  <a href="https://drive.google.com/file/d/1WPFbJg3arhVcQzi7AoWIOE6qn4RB0Kth/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                    <Button className="button-glow">
+                      <FileDown className="mr-2 h-5 w-5" /> View Resume
+                    </Button>
+                  </a>
                   
                   <Button variant="outline" onClick={() => setShowChat(true)}>
                     Ask Me Anything
@@ -92,25 +94,16 @@ export default function About() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
                 >
-                  <div className="aspect-[3/4] bg-muted rounded-2xl flex items-center justify-center text-6xl">
-                    <motion.svg 
-                      viewBox="0 0 24 24" 
-                      width="100%" 
-                      height="100%" 
-                      className="text-primary/10"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.6, delay: 0.6 }}
-                    >
-                      <rect width="24" height="24" fill="none" stroke="currentColor" strokeWidth="0.4" />
-                      <circle cx="12" cy="8" r="5" fill="currentColor" />
-                      <path d="M21 24v-2a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v2" fill="currentColor" />
-                    </motion.svg>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <p className="text-xl font-bold bg-background/70 p-4 rounded-lg">
-                        [Profile Image]
-                      </p>
-                    </div>
+                  <div className="aspect-[3/4] rounded-2xl overflow-hidden">
+                    <img 
+                      src="/attached_assets/Portfolio DP.jpg" 
+                      alt="Srikar Kodi" 
+                      className="w-full h-full object-cover"
+                      style={{
+                        opacity: 1,
+                        transition: "opacity 0.6s ease-in-out"
+                      }}
+                    />
                   </div>
                 </motion.div>
               </div>
@@ -126,10 +119,10 @@ export default function About() {
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              "Python", "JavaScript", "SQL", "ETL Pipelines", 
-              "PostgreSQL", "Flask", "Django", "React",
-              "Git", "AWS", "Data Warehousing", "REST APIs",
-              "Data Visualization", "NLP", "Docker", "Linux"
+              "Python", "Numpy", "Pandas", "Flask", 
+              "NLP", "TensorFlow", "PyTorch", "Data Visualization",
+              "SQL", "PostgreSQL", "JavaScript", "React JS",
+              "AWS", "Docker", "Kubernetes", "REST APIs", "Linux"
             ].map((skill, index) => (
               <motion.div
                 key={skill}
@@ -194,19 +187,7 @@ export default function About() {
                   </p>
                 </motion.div>
                 
-                <motion.div 
-                  className="bg-card p-6 rounded-xl glow-border"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 400 }}
-                >
-                  <p className="text-sm text-muted-foreground">2020</p>
-                  <h3 className="text-xl font-bold mt-2">Data Engineering Professional</h3>
-                  <p className="text-primary">DataCamp Certification</p>
-                  <p className="mt-3 text-muted-foreground">
-                    Specialized in ETL pipelines, PostgreSQL database management, 
-                    and data transformation techniques.
-                  </p>
-                </motion.div>
+
               </div>
             </div>
             
