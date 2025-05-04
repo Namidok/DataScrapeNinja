@@ -29,7 +29,7 @@ export const personalInfo = {
 
 export const workExperience = [
   {
-    period: "2023 - 2025",
+    period: "2023 - Present",
     title: "Application Developer",
     company: "Vavili Technologies",
     description: "Designed full stack web applications, an avid member on working on our product <a href=\"https://www.templeswiki.com\" target=\"_blank\" rel=\"noopener noreferrer\" className=\"text-primary hover:underline\">TemplesWiki</a>."
@@ -38,7 +38,7 @@ export const workExperience = [
     period: "2022 - 2023",
     title: "Trainee Software Engineer",
     company: "Valuelabs",
-    description: "Worked as a Quality Assurance Engineer, creating comprehensive test plans and collaborating with Product Managers to ensure high-quality software delivery."
+    description: "Worked as a Quality Assurance Engineer, creating comprehensive test plans, collaborating closely with Product Managers on requirement analysis, and conducting thorough testing to ensure high-quality software delivery."
   }
 ];
 
