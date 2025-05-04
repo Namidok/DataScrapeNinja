@@ -116,9 +116,9 @@ export default function Projects() {
             <div className="h-1 w-20 bg-primary mb-10"></div>
             
             <p className="text-xl max-w-3xl text-muted-foreground mb-10">
-              Explore a selection of my recent work, including web applications, 
-              mobile apps, and UI/UX design projects. Each project represents a unique 
-              challenge and showcases different aspects of my skills and expertise.
+              Explore my recent work with Python and AI technologies, including full-stack applications, 
+              data engineering pipelines, and machine learning projects. Each project demonstrates 
+              my expertise in Python development, natural language processing, and data science.
             </p>
             
             {/* Filter buttons */}
