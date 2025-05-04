@@ -94,8 +94,8 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            I build powerful data pipelines and intelligent systems with Python and modern AI technologies.
-            Currently focused on ETL processes and natural language applications.
+            I develop full stack applications that leverage AI technologies to solve real-world problems.
+            Currently building intelligent web solutions that combine Python backends with modern frontend frameworks.
           </motion.p>
           
           <motion.div 

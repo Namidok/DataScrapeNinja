@@ -48,24 +48,26 @@ export default function Navbar() {
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-1">
               {links.map((link) => (
-                <Link key={link.path} href={link.path}>
-                  <a
-                    className={`px-4 py-2 rounded-md transition-colors relative ${
-                      location === link.path
-                        ? "text-primary"
-                        : "text-foreground hover:text-primary"
-                    }`}
-                  >
-                    {link.label}
-                    {location === link.path && (
-                      <motion.div
-                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
-                        layoutId="navbar-indicator"
-                        transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                      />
-                    )}
-                  </a>
-                </Link>
+                <div key={link.path}>
+                  <Link href={link.path}>
+                    <span
+                      className={`px-4 py-2 rounded-md transition-colors relative inline-block cursor-pointer ${
+                        location === link.path
+                          ? "text-primary"
+                          : "text-foreground hover:text-primary"
+                      }`}
+                    >
+                      {link.label}
+                      {location === link.path && (
+                        <motion.div
+                          className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
+                          layoutId="navbar-indicator"
+                          transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                        />
+                      )}
+                    </span>
+                  </Link>
+                </div>
               ))}
               
               <Button
@@ -122,24 +124,26 @@ export default function Navbar() {
           >
             <nav className="flex flex-col p-4">
               {links.map((link, index) => (
-                <Link key={link.path} href={link.path}>
-                  <a
-                    className={`py-4 px-6 text-lg border-b border-border ${
-                      location === link.path
-                        ? "text-primary"
-                        : "text-foreground"
-                    }`}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    <motion.div
-                      initial={{ x: -10, opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      transition={{ delay: 0.1 * index }}
+                <div key={link.path}>
+                  <Link href={link.path}>
+                    <div
+                      className={`py-4 px-6 text-lg border-b border-border cursor-pointer ${
+                        location === link.path
+                          ? "text-primary"
+                          : "text-foreground"
+                      }`}
+                      onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      {link.label}
-                    </motion.div>
-                  </a>
-                </Link>
+                      <motion.div
+                        initial={{ x: -10, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{ delay: 0.1 * index }}
+                      >
+                        {link.label}
+                      </motion.div>
+                    </div>
+                  </Link>
+                </div>
               ))}
             </nav>
           </motion.div>
