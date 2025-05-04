@@ -85,7 +85,7 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <AnimatedText text="Frontend Developer & UI/UX Designer" />
+            <AnimatedText text="Full Stack Python & AI Enthusiast" />
           </motion.div>
           
           <motion.p 
@@ -94,8 +94,8 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            I create engaging digital experiences with modern web technologies.
-            Currently working on AI-powered web applications.
+            I build powerful data pipelines and intelligent systems with Python and modern AI technologies.
+            Currently focused on ETL processes and natural language applications.
           </motion.p>
           
           <motion.div 
@@ -141,7 +141,7 @@ export default function Home() {
       <ParallaxSection className="py-24 bg-secondary about-bg">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold mb-12 gradient-text text-center">
-            Crafting Digital Experiences
+            Transforming Data Into Insights
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -163,9 +163,9 @@ export default function Home() {
                   </svg>
                 </motion.div>
               </div>
-              <h3 className="text-xl font-bold mb-4">Frontend Development</h3>
+              <h3 className="text-xl font-bold mb-4">Data Engineering</h3>
               <p className="text-muted-foreground">
-                Creating responsive and intuitive user interfaces with modern frameworks and libraries.
+                Building efficient ETL pipelines and data warehousing solutions for reliable data management.
               </p>
             </motion.div>
             
@@ -186,9 +186,9 @@ export default function Home() {
                   </svg>
                 </motion.div>
               </div>
-              <h3 className="text-xl font-bold mb-4">UI/UX Design</h3>
+              <h3 className="text-xl font-bold mb-4">Machine Learning</h3>
               <p className="text-muted-foreground">
-                Designing beautiful and functional interfaces with a focus on user experience and accessibility.
+                Implementing AI solutions and natural language processing models to extract insights from complex data.
               </p>
             </motion.div>
             
@@ -208,9 +208,9 @@ export default function Home() {
                   </svg>
                 </motion.div>
               </div>
-              <h3 className="text-xl font-bold mb-4">Performance Optimization</h3>
+              <h3 className="text-xl font-bold mb-4">Full Stack Development</h3>
               <p className="text-muted-foreground">
-                Ensuring websites and applications load quickly and run smoothly on all devices.
+                Creating end-to-end solutions with Python and modern web frameworks to deliver complete, scalable applications.
               </p>
             </motion.div>
           </div>
