@@ -65,7 +65,7 @@ export default function About() {
               <div>
                 <h2 className="text-2xl font-bold mb-6">Who I Am</h2>
                 <p className="text-lg mb-6 text-muted-foreground">
-                  I'm Srikar Kodi, with 3 years of professional work experience - 1 year in Quality Assurance and 2 years in Application Development. One of my notable works includes the development of www.templeswiki.com as a full stack developer.
+                  I'm Srikar Kodi, with 3 years of professional work experience - 1 year in Quality Assurance and 2 years in Application Development. One of my notable works includes the development of <a href="https://www.templeswiki.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">TemplesWiki</a> as a full stack developer.
                 </p>
                 <p className="text-lg mb-6 text-muted-foreground">
                   I completed my degree in Electronics and Communication Engineering at MVGR College of Engineering (2016-2020), where I built a strong foundation in technical skills and problem-solving abilities.
