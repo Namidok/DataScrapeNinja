@@ -6,8 +6,10 @@ import Chatbot from "@/components/Chatbot";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ChevronRight, ExternalLink, MessageSquare } from "lucide-react";
+import { useTranslation } from 'react-i18next';
 
 export default function Home() {
+  const { t } = useTranslation();
   const [showChat, setShowChat] = useState(false);
   
   const container = {
@@ -76,7 +78,7 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className="gradient-text">Srikar Kodi</span>
+            <span className="gradient-text">{t("Srikar Kodi")}</span>
           </motion.h1>
           
           <motion.div 
@@ -85,7 +87,7 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <AnimatedText text="Full Stack Python & AI Enthusiast" />
+            <AnimatedText text={t("Full Stack Python & AI Enthusiast")} />
           </motion.div>
           
           <motion.p 
@@ -94,8 +96,7 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            I develop full stack applications that leverage AI technologies to solve real-world problems.
-            Currently building intelligent web solutions that combine Python backends with modern frontend frameworks.
+            {t("Hero Description")}
           </motion.p>
           
           <motion.div 
@@ -107,7 +108,7 @@ export default function Home() {
             <motion.div variants={item}>
               <Link href="/about">
                 <Button className="text-lg px-8 py-6 button-glow" size="lg">
-                  About Me
+                  {t("About Me")}
                   <ChevronRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
@@ -116,7 +117,7 @@ export default function Home() {
             <motion.div variants={item}>
               <Link href="/projects">
                 <Button className="text-lg px-8 py-6 button-glow" size="lg" variant="outline">
-                  View Projects
+                  {t("View Projects")}
                   <ExternalLink className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
@@ -129,7 +130,7 @@ export default function Home() {
                 variant="secondary"
                 onClick={() => setShowChat(!showChat)}
               >
-                Chat With Me
+                {t("Chat With Me")}
                 <MessageSquare className="ml-2 h-5 w-5" />
               </Button>
             </motion.div>
@@ -141,7 +142,7 @@ export default function Home() {
       <ParallaxSection className="py-24 bg-secondary about-bg">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold mb-12 gradient-text text-center">
-            Transforming Data Into Insights
+            {t("Transforming Data Into Insights")}
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -163,9 +164,9 @@ export default function Home() {
                   </svg>
                 </motion.div>
               </div>
-              <h3 className="text-xl font-bold mb-4">Data Engineering</h3>
+              <h3 className="text-xl font-bold mb-4">{t("Data Engineering")}</h3>
               <p className="text-muted-foreground">
-                Building efficient ETL pipelines and data warehousing solutions for reliable data management.
+                {t("Data Engineering Description")}
               </p>
             </motion.div>
             
@@ -186,9 +187,9 @@ export default function Home() {
                   </svg>
                 </motion.div>
               </div>
-              <h3 className="text-xl font-bold mb-4">Machine Learning</h3>
+              <h3 className="text-xl font-bold mb-4">{t("Machine Learning")}</h3>
               <p className="text-muted-foreground">
-                Implementing AI solutions and natural language processing models to extract insights from complex data.
+                {t("Machine Learning Description")}
               </p>
             </motion.div>
             
@@ -208,9 +209,9 @@ export default function Home() {
                   </svg>
                 </motion.div>
               </div>
-              <h3 className="text-xl font-bold mb-4">Full Stack Development</h3>
+              <h3 className="text-xl font-bold mb-4">{t("Full Stack Development")}</h3>
               <p className="text-muted-foreground">
-                Creating end-to-end solutions with Python and modern web frameworks to deliver complete, scalable applications.
+                {t("Full Stack Development Description")}
               </p>
             </motion.div>
           </div>

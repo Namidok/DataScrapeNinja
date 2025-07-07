@@ -1,18 +1,20 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useTranslation } from 'react-i18next';
 import AnimatedSection from "@/components/AnimatedSection";
 import ProjectCard from "@/components/ProjectCard";
 import { Button } from "@/components/ui/button";
 import Chatbot from "@/components/Chatbot";
 
 export default function Projects() {
+  const { t } = useTranslation();
   const [showChat, setShowChat] = useState(false);
 
   const projects = [
     {
       id: 1,
-      title: "AI-Powered Learning Platform",
-      description: "A web application that uses machine learning algorithms to personalize learning paths for students.",
+      title: t("AI-Powered Learning Platform"),
+      description: t("AI-Powered Learning Platform Description"),
       tags: ["React", "Node.js", "Machine Learning", "Web App"],
       image: "learning-platform",
       link: "#",
@@ -20,8 +22,8 @@ export default function Projects() {
     },
     {
       id: 2,
-      title: "E-Commerce Website",
-      description: "A full-featured online store with product catalog, shopping cart, and payment integration.",
+      title: t("E-Commerce Website"),
+      description: t("E-Commerce Website Description"),
       tags: ["Next.js", "Stripe", "TypeScript", "Web App"],
       image: "ecommerce",
       link: "#",
@@ -29,8 +31,8 @@ export default function Projects() {
     },
     {
       id: 3,
-      title: "Data Visualization Dashboard",
-      description: "Interactive dashboard for visualizing complex datasets with customizable charts and filters.",
+      title: t("Data Visualization Dashboard"),
+      description: t("Data Visualization Dashboard Description"),
       tags: ["React", "D3.js", "Dashboard", "Web App"],
       image: "dashboard",
       link: "#",
@@ -38,8 +40,8 @@ export default function Projects() {
     },
     {
       id: 4,
-      title: "Recipe Sharing App",
-      description: "Mobile application for sharing and discovering recipes with social features.",
+      title: t("Recipe Sharing App"),
+      description: t("Recipe Sharing App Description"),
       tags: ["React Native", "Firebase", "Mobile App"],
       image: "recipe-app",
       link: "#",
@@ -47,8 +49,8 @@ export default function Projects() {
     },
     {
       id: 5,
-      title: "Portfolio Website Template",
-      description: "A customizable template for creating professional portfolio websites.",
+      title: t("Portfolio Website Template"),
+      description: t("Portfolio Website Template Description"),
       tags: ["HTML/CSS", "JavaScript", "Web App"],
       image: "portfolio-template",
       link: "#",
@@ -56,8 +58,8 @@ export default function Projects() {
     },
     {
       id: 6,
-      title: "Weather Application",
-      description: "Real-time weather information app with location-based forecasts and alerts.",
+      title: t("Weather Application"),
+      description: t("Weather Application Description"),
       tags: ["React", "API Integration", "Web App"],
       image: "weather-app",
       link: "#",
@@ -98,15 +100,13 @@ export default function Projects() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              My <span className="gradient-text">Projects</span>
+              {t("My Projects")}
             </h1>
             
             <div className="h-1 w-20 bg-primary mb-10"></div>
             
             <p className="text-xl max-w-3xl text-muted-foreground mb-10">
-              Explore my recent work with Python and AI technologies, including full-stack applications, 
-              data engineering pipelines, and machine learning projects. Each project demonstrates 
-              my expertise in Python development, natural language processing, and data science.
+              {t("Projects Intro")}
             </p>
           </motion.div>
         </div>
@@ -127,7 +127,7 @@ export default function Projects() {
           
           <div className="text-center mt-16">
             <Button onClick={() => setShowChat(true)} className="button-glow">
-              Ask me about my projects
+              {t("Ask me about my projects")}
             </Button>
           </div>
         </div>
@@ -137,15 +137,15 @@ export default function Projects() {
       <AnimatedSection className="py-24 contact-bg">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Interested in working together?
+            {t("Interested in working together?")}
           </h2>
           
           <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-            I'm always open to discussing new projects, creative ideas or opportunities to be part of your vision.
+            {t("Collaboration CTA")}
           </p>
           
           <Button className="text-lg px-8 py-6 button-glow" size="lg" asChild>
-            <a href="/contact">Get In Touch</a>
+            <a href="/contact">{t("Get In Touch")}</a>
           </Button>
         </div>
       </AnimatedSection>

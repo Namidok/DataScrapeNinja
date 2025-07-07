@@ -78,10 +78,6 @@ export default function Footer() {
           <p className="text-sm text-muted-foreground">
             © {currentYear} Srikar Kodi. All rights reserved.
           </p>
-          
-          <p className="text-sm text-muted-foreground mt-2 md:mt-0">
-            Designed with ❤️ and modern web technologies
-          </p>
         </div>
       </div>
     </footer>

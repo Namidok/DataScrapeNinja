@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useTranslation } from 'react-i18next';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -14,19 +15,20 @@ import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { Mail, MessageSquare, Send } from "lucide-react";
 import Chatbot from "@/components/Chatbot";
 
-// Define form schema
-const formSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Please enter a valid email address"),
-  message: z.string().min(10, "Message must be at least 10 characters")
-});
-
-type FormData = z.infer<typeof formSchema>;
-
 export default function Contact() {
+  const { t } = useTranslation();
   const [submitting, setSubmitting] = useState(false);
   const [showChat, setShowChat] = useState(false);
   const { toast } = useToast();
+
+  // Define form schema
+  const formSchema = z.object({
+    name: z.string().min(2, t("Name must be at least 2 characters")),
+    email: z.string().email(t("Please enter a valid email address")),
+    message: z.string().min(10, t("Message must be at least 10 characters"))
+  });
+
+  type FormData = z.infer<typeof formSchema>;
   
   // Initialize form
   const form = useForm<FormData>({
@@ -45,8 +47,8 @@ export default function Contact() {
     await new Promise(resolve => setTimeout(resolve, 1500));
     
     toast({
-      title: "Message sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
+      title: t("Message sent!"),
+      description: t("Thanks for reaching out. I'll get back to you soon."),
     });
     
     form.reset();
@@ -94,14 +96,13 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Get In <span className="gradient-text">Touch</span>
+              {t("Contact Title")} <span className="gradient-text">{t("Touch")}</span>
             </h1>
             
             <div className="h-1 w-20 bg-primary mb-10"></div>
             
             <p className="text-xl max-w-3xl text-muted-foreground mb-4">
-              Feel free to reach out to me for collaborations, job opportunities, 
-              or just to say hello. I'm always open to discussing new projects or ideas.
+              {t("Contact Intro")}
             </p>
             
             <Button 
@@ -110,7 +111,7 @@ export default function Contact() {
               onClick={() => setShowChat(true)}
             >
               <MessageSquare className="mr-2 h-5 w-5" />
-              Start a chat
+              {t("Start a chat")}
             </Button>
           </motion.div>
         </div>
@@ -125,7 +126,7 @@ export default function Contact() {
               <CardContent className="p-8">
                 <h2 className="text-2xl font-bold mb-6 flex items-center">
                   <Mail className="mr-2 h-6 w-6" />
-                  Send me a message
+                  {t("Send me a message")}
                 </h2>
                 
                 <Form {...form}>
@@ -135,7 +136,7 @@ export default function Contact() {
                       name="name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Your Name</FormLabel>
+                          <FormLabel>{t("Your Name")}</FormLabel>
                           <FormControl>
                             <Input placeholder="John Smith" {...field} />
                           </FormControl>
@@ -149,7 +150,7 @@ export default function Contact() {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Email Address</FormLabel>
+                          <FormLabel>{t("Email Address")}</FormLabel>
                           <FormControl>
                             <Input placeholder="your@email.com" {...field} />
                           </FormControl>
@@ -163,7 +164,7 @@ export default function Contact() {
                       name="message"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Message</FormLabel>
+                          <FormLabel>{t("Message")}</FormLabel>
                           <FormControl>
                             <Textarea 
                               placeholder="Your message here..." 
@@ -187,12 +188,12 @@ export default function Contact() {
                             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                           </svg>
-                          Sending...
+                          {t("Sending...")}
                         </div>
                       ) : (
                         <div className="flex items-center">
                           <Send className="mr-2 h-5 w-5" />
-                          Send Message
+                          {t("Send Message")}
                         </div>
                       )}
                     </Button>
@@ -203,7 +204,7 @@ export default function Contact() {
             
             {/* Social links */}
             <div>
-              <h2 className="text-2xl font-bold mb-8">Connect with me</h2>
+              <h2 className="text-2xl font-bold mb-8">{t("Connect with me")}</h2>
               
               <div className="space-y-6">
                 {socialLinks.map((link, index) => (
@@ -239,13 +240,13 @@ export default function Contact() {
               </div>
               
               <div className="mt-12 p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-4">Location</h3>
-                <p className="text-muted-foreground mb-2">Visakhapatnam, Andhra Pradesh</p>
-                <p className="text-muted-foreground">India</p>
+                <h3 className="text-xl font-bold mb-4">{t("Location")}</h3>
+                <p className="text-muted-foreground mb-2">{t("Visakhapatnam, Andhra Pradesh")}</p>
+                <p className="text-muted-foreground">{t("India")}</p>
               </div>
               
               <div className="mt-8 p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-4">Email</h3>
+                <h3 className="text-xl font-bold mb-4">{t("Email")}</h3>
                 <a 
                   href="mailto:kodisrikar@gmail.com" 
                   className="text-primary hover:underline"
@@ -262,7 +263,7 @@ export default function Contact() {
       <AnimatedSection className="py-24 hero-bg">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-12 text-center">
-            Frequently Asked Questions
+            {t("Frequently Asked Questions")}
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -291,8 +292,8 @@ export default function Contact() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
               >
-                <h3 className="text-xl font-bold mb-2">{faq.question}</h3>
-                <p className="text-muted-foreground">{faq.answer}</p>
+                <h3 className="text-xl font-bold mb-2">{t(faq.question)}</h3>
+                <p className="text-muted-foreground">{t(faq.answer)}</p>
               </motion.div>
             ))}
           </div>

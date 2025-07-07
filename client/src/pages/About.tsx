@@ -5,29 +5,31 @@ import { Button } from "@/components/ui/button";
 import { FileDown, ChevronRight } from "lucide-react";
 import Chatbot from "@/components/Chatbot";
 import { useState } from "react";
+import { useTranslation } from 'react-i18next';
 
 export default function About() {
+  const { t } = useTranslation();
   const [showChat, setShowChat] = useState(false);
 
   const experiences = [
     {
       period: "2023 - 2025",
-      title: "Application Developer",
+      title: t("Application Developer"),
       company: "Vavili Technologies",
-      description: <>Designed full stack web applications, an avid member on working on our product <a href="https://www.templeswiki.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">TemplesWiki</a>.</>
+      description: <>{t("Designed full stack web applications, an avid member on working on our product TemplesWiki.")}</>
     },
     {
       period: "2022 - 2023",
-      title: "Trainee Software Engineer",
+      title: t("Trainee Software Engineer"),
       company: "Valuelabs",
-      description: "Worked as a Quality Assurance Engineer, developing and executing comprehensive test plans, collaborating closely with Product Managers on requirement analysis, and documenting test results to maintain high-quality software delivery standards."
+      description: t("Worked as a Quality Assurance Engineer, developing and executing comprehensive test plans, collaborating closely with Product Managers on requirement analysis, and documenting test results to maintain high-quality software delivery standards.")
     }
   ];
 
   return (
     <div className="w-full">
       {/* Hero section */}
-      <section className="py-24 relative overflow-hidden about-bg">
+      <section className="py-16 relative overflow-hidden about-bg">
         <div className="absolute inset-0 z-0">
           <motion.div
             className="absolute top-20 left-[20%] w-72 h-72 bg-primary/10 rounded-full filter blur-3xl"
@@ -42,56 +44,60 @@ export default function About() {
             }}
           />
         </div>
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              About <span className="gradient-text">Me</span>
+            <h1 className="text-4xl md:text-6xl font-bold mb-4">
+              {t("About Me Title")} <span className="gradient-text">{t("Me")}</span>
             </h1>
-            
-            <div className="h-1 w-20 bg-primary mb-10"></div>
-            
+
+            <div className="h-1 w-20 bg-primary mb-6"></div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div>
-                <h2 className="text-2xl font-bold mb-6">Who I Am</h2>
+                <h2 className="text-2xl font-bold mb-6">{t("Who I Am")}</h2>
                 <p className="text-lg mb-6 text-muted-foreground">
-                  I'm Srikar Kodi, with 3 years of professional work experience - 1 year in Quality Assurance and 2 years in Application Development. One of my notable works includes the development of <a href="https://www.templeswiki.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">TemplesWiki</a> as a full stack developer.
+                  {t("About Intro 1")}
                 </p>
                 <p className="text-lg mb-6 text-muted-foreground">
-                  I completed my degree in Electronics and Communication Engineering at MVGR College of Engineering (2016-2020), where I built a strong foundation in technical skills and problem-solving abilities.
+                  {t("About Intro 2")}
                 </p>
                 <p className="text-lg mb-6 text-muted-foreground">
-                  I'm deeply interested in AI technologies and how they are transforming the software development landscape. I believe AI integration will significantly enhance my career path, allowing me to build more intelligent and responsive applications that provide greater value to users.
+                  {t("About Intro 3")}
                 </p>
-                
+                <p className="text-lg mb-6 text-muted-foreground">
+                  {t("About Intro 4")}
+                </p>
+
+
                 <div className="flex flex-wrap gap-4 mt-8">
                   <a href="https://drive.google.com/file/d/1WPFbJg3arhVcQzi7AoWIOE6qn4RB0Kth/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
                     <Button className="button-glow">
-                      <FileDown className="mr-2 h-5 w-5" /> View Resume
+                      <FileDown className="mr-2 h-5 w-5" /> {t("View Resume")}
                     </Button>
                   </a>
-                  
+
                   <Button variant="outline" onClick={() => setShowChat(true)}>
-                    Ask Me Anything
+                    {t("Ask Me Anything")}
                   </Button>
                 </div>
               </div>
-              
+
               <div>
-                <motion.div 
-                  className="relative border-2 border-primary/20 rounded-2xl overflow-hidden"
+                <motion.div
+                  className="relative border-2 border-primary/20 rounded-2xl overflow-hidden max-w-sm mx-auto"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
                 >
                   <div className="aspect-[3/4] rounded-2xl overflow-hidden">
-                    <img 
-                      src="/attached_assets/Portfolio DP.jpg" 
-                      alt="Srikar Kodi" 
+                    <img
+                      src="/attached_assets/Portfolio DP.jpg"
+                      alt="Srikar Kodi"
                       className="w-full h-full object-cover"
                       style={{
                         opacity: 1,
@@ -105,15 +111,15 @@ export default function About() {
           </motion.div>
         </div>
       </section>
-      
+
       {/* Skills section */}
       <AnimatedSection className="py-24 bg-secondary about-bg">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 text-center">Technical Skills</h2>
-          
+          <h2 className="text-3xl font-bold mb-12 text-center">{t("Technical Skills")}</h2>
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              "Python", "Numpy", "Pandas", "Flask", 
+              "Python", "Numpy", "Pandas", "Flask",
               "NLP", "TensorFlow", "PyTorch", "Data Visualization",
               "SQL", "PostgreSQL", "JavaScript", "React JS",
               "AWS", "Docker", "Kubernetes", "REST APIs", "Linux"
@@ -132,15 +138,15 @@ export default function About() {
           </div>
         </div>
       </AnimatedSection>
-      
+
       {/* Experience section */}
       <AnimatedSection className="py-24 hero-bg">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 text-center">Work Experience</h2>
-          
+          <h2 className="text-3xl font-bold mb-12 text-center">{t("Work Experience")}</h2>
+
           <div className="space-y-12 max-w-3xl mx-auto">
             {experiences.map((exp, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 className="relative pl-10 border-l-2 border-primary/30"
                 initial={{ opacity: 0, x: -10 }}
@@ -157,38 +163,37 @@ export default function About() {
           </div>
         </div>
       </AnimatedSection>
-      
+
       {/* Education & Hobbies section */}
       <AnimatedSection className="py-24 bg-secondary projects-bg">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Education */}
             <div>
-              <h2 className="text-3xl font-bold mb-8">Education</h2>
-              
+              <h2 className="text-3xl font-bold mb-8">{t("Education")}</h2>
+
               <div className="space-y-8">
-                <motion.div 
+                <motion.div
                   className="bg-card p-6 rounded-xl glow-border"
                   whileHover={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
                   <p className="text-sm text-muted-foreground">2016 - 2020</p>
-                  <h3 className="text-xl font-bold mt-2">B.Tech in Electronics and Communication</h3>
-                  <p className="text-primary">MVGR College of Engineering</p>
+                  <h3 className="text-xl font-bold mt-2">{t("B.Tech in Electronics and Communication")}</h3>
+                  <p className="text-primary">{t("MVGR College of Engineering")}</p>
                   <p className="mt-3 text-muted-foreground">
-                    Focused on building a strong foundation in technical skills and electronics.
-                    Developed problem-solving abilities and project management.
+                    {t("Focused on building a strong foundation in technical skills and electronics. Developed problem-solving abilities and project management.")}
                   </p>
                 </motion.div>
-                
+
 
               </div>
             </div>
-            
+
             {/* Hobbies */}
             <div>
-              <h2 className="text-3xl font-bold mb-8">Hobbies & Interests</h2>
-              
+              <h2 className="text-3xl font-bold mb-8">{t("Hobbies & Interests")}</h2>
+
               <div className="grid grid-cols-2 gap-6">
                 {[
                   { name: "Football", icon: "⚽" },
@@ -198,29 +203,29 @@ export default function About() {
                   { name: "Travelling", icon: "✈️" },
                   { name: "Music", icon: "🎵" }
                 ].map((hobby, index) => (
-                  <motion.div 
+                  <motion.div
                     key={hobby.name}
                     className="bg-card p-6 rounded-xl flex items-center gap-4 glow-border"
                     whileHover={{ scale: 1.05 }}
-                    transition={{ 
-                      type: "spring", 
+                    transition={{
+                      type: "spring",
                       stiffness: 400,
-                      duration: 0.4, 
-                      delay: index * 0.1 
+                      duration: 0.4,
+                      delay: index * 0.1
                     }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                   >
                     <span className="text-3xl">{hobby.icon}</span>
-                    <span className="text-lg">{hobby.name}</span>
+                    <span className="text-lg">{t(hobby.name)}</span>
                   </motion.div>
                 ))}
               </div>
-              
+
               <div className="mt-8">
                 <Link href="/projects">
                   <Button className="w-full button-glow">
-                    See My Projects <ChevronRight className="ml-2 h-5 w-5" />
+                    {t("See My Projects")} <ChevronRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
               </div>
@@ -228,7 +233,7 @@ export default function About() {
           </div>
         </div>
       </AnimatedSection>
-      
+
       {/* Chatbot */}
       {showChat && (
         <Chatbot onClose={() => setShowChat(false)} />

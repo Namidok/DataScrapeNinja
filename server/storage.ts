@@ -88,7 +88,7 @@ export class MemStorage implements IStorage {
 
   async getChatResponseByKeyword(keyword: string): Promise<ChatResponse | undefined> {
     return Array.from(this.responses.values()).find(
-      (response) => response.keyword.toLowerCase().includes(keyword.toLowerCase())
+      (response) => response.keyword.toLowerCase() === keyword.toLowerCase()
     );
   }
 
@@ -101,26 +101,26 @@ export class MemStorage implements IStorage {
 
   async initializeChatResponses(): Promise<void> {
     const defaultResponses: InsertChatResponse[] = [
-      { keyword: "who are you", response: "I'm a portfolio chatbot designed to answer questions about Srikar Kodi, the portfolio owner." },
-      { keyword: "name", response: "This is Srikar Kodi's portfolio website. He's a passionate Python developer and data engineer with expertise in ETL processes and full-stack development." },
-      { keyword: "born", response: "Srikar is from Visakhapatnam, Andhra Pradesh, India." },
-      { keyword: "education", response: "Srikar graduated with a Bachelor's degree in Computer Science & Engineering from MVGR College of Engineering." },
-      { keyword: "work experience", response: "Srikar has worked at Vavili Technologies as a Software Developer Trainee and at ValueLabs as a Software Engineer." },
-      { keyword: "hobbies", response: "Srikar enjoys developing AI projects, working on data engineering solutions, and creating innovative software applications." },
-      { keyword: "projects", response: "Srikar has worked on several projects including Cipher (personal chatbot assistant), Dataset Translator App, and Data Engineer with Python. Check out the Projects section for more details!" },
-      { keyword: "contact", response: "You can contact Srikar through GitHub and LinkedIn links on the Contact page or send a message using the contact form." },
-      { keyword: "skills", response: "Srikar's technical skills include Python, SQL, Flask, Django, PostgreSQL, AWS, ETL development, and data engineering." },
-      { keyword: "hello", response: "Hello! How can I help you learn more about Srikar today?" },
-      { keyword: "hi", response: "Hi there! Feel free to ask me anything about Srikar or his portfolio." },
-      { keyword: "linkedin", response: "You can find Srikar's LinkedIn profile in the Contact section of this website." },
-      { keyword: "github", response: "Srikar's GitHub username is Namidok. You can check his repositories for code samples and projects." },
-      { keyword: "resume", response: "You can learn about Srikar's experience and skills on the About page." },
-      { keyword: "current work", response: "Srikar is a Python Developer and Data Engineer with experience in ETL processes and full-stack development." },
-      { keyword: "data engineering", response: "Srikar specializes in data engineering, building ETL pipelines, and data transformation solutions using Python." },
-      { keyword: "python", response: "Srikar is proficient in Python programming and has developed several applications and data solutions with it." },
-      { keyword: "chatbot", response: "Srikar has developed 'Cipher', a personal chatbot assistant, and has experience with NLP and conversational AI." },
-      { keyword: "location", response: "Srikar is currently based in Visakhapatnam, Andhra Pradesh, India." },
-      { keyword: "default", response: "I don't have specific information about that. Feel free to ask about Srikar's experience, skills, projects, or contact information!" }
+      { keyword: "who are you", response: "I am Srikar Kodi's AI assistant, designed to provide information about his professional background, skills, and projects to potential employers and collaborators." },
+      { keyword: "name", response: "This is Srikar Kodi's professional portfolio. He is a dedicated Full Stack Python & AI Enthusiast with a strong background in developing intelligent web solutions and robust data pipelines." },
+      { keyword: "born", response: "Srikar is based in Visakhapatnam, Andhra Pradesh, India." },
+      { keyword: "education", response: "Srikar holds a Bachelor's degree in Electronics and Communication Engineering from MVGR College of Engineering, providing a solid foundation for his technical career." },
+      { keyword: "work experience", response: "Srikar has 3 years of professional experience, including 2 years in Application Development at Vavili Technologies, where he contributed to full-stack web applications like TemplesWiki, and 1 year in Quality Assurance at ValueLabs, focusing on test plan development and software quality." },
+      { keyword: "hobbies", response: "Beyond professional work, Srikar is passionate about developing AI projects, optimizing data engineering solutions, and creating innovative software applications." },
+      { keyword: "projects", response: "Srikar's portfolio includes impactful projects like Cipher (a personal chatbot assistant), a Dataset Translator App, and contributions to TemplesWiki. These demonstrate his expertise in full-stack development, AI, and data engineering. More details are available in the Projects section." },
+      { keyword: "contact", response: "You can connect with Srikar via his LinkedIn and GitHub profiles, linked in the Contact section of this website, or by using the direct contact form." },
+      { keyword: "skills", response: "Srikar's core technical skills include Python, SQL, PostgreSQL, Flask, Django, AWS, Docker, Kubernetes, ETL development, data visualization, and proficiency in AI/ML frameworks like TensorFlow and PyTorch." },
+      { keyword: "hello", response: "Hello! I'm here to assist you with any professional inquiries about Srikar Kodi. How can I help you today?" },
+      { keyword: "hi", response: "Hi there! Feel free to ask me anything about Srikar's professional experience, technical skills, or projects." },
+      { keyword: "linkedin", response: "You can find Srikar Kodi's professional LinkedIn profile in the Contact section of this website for more details on his career journey." },
+      { keyword: "github", response: "Srikar's GitHub username is Namidok. His repositories showcase his coding style and project contributions. You can find the link in the Contact section." },
+      { keyword: "resume", response: "For a comprehensive overview of Srikar's qualifications, please refer to his resume, accessible via the 'View Resume' button on the About page." },
+      { keyword: "current work", response: "Srikar is currently focused on developing full-stack applications that integrate AI technologies, specializing in Python backends and modern frontend frameworks." },
+      { keyword: "data engineering", response: "Srikar possesses strong expertise in data engineering, including building robust ETL pipelines, data transformation, and data management using Python and SQL." },
+      { keyword: "python", response: "Srikar is highly proficient in Python, leveraging it for backend development, data engineering, AI/ML applications, and scripting." },
+      { keyword: "chatbot", response: "Srikar has developed 'Cipher,' a personal chatbot assistant, demonstrating his capabilities in natural language processing and conversational AI development." },
+      { keyword: "location", response: "Srikar is currently located in Visakhapatnam, Andhra Pradesh, India, and is open to remote opportunities." },
+      { keyword: "default", response: "I can provide more details about Srikar's professional experience, technical skills, or specific projects. Please ask a more specific question related to his professional profile." }
     ];
 
     // Clear existing responses and add defaults

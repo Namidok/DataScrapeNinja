@@ -12,7 +12,10 @@ import Contact from "@/pages/Contact";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
+import BackgroundAnimation from "@/components/BackgroundAnimation";
 import { ThemeProvider } from "next-themes";
+import i18n from "./lib/i18n"; // Import i18n configuration
+import { I18nextProvider } from 'react-i18next';
 
 function Router() {
   return (
@@ -38,10 +41,12 @@ function App() {
   }
   
   return (
-    <ThemeProvider attribute="class" defaultTheme="dark">
+    <I18nextProvider i18n={i18n}>
+      <ThemeProvider defaultTheme="dark">
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
           <CustomCursor />
+          <BackgroundAnimation />
           <div className="flex flex-col min-h-screen overflow-hidden">
             <Navbar />
             <main className="flex-grow">
@@ -53,6 +58,7 @@ function App() {
         </TooltipProvider>
       </QueryClientProvider>
     </ThemeProvider>
+    </I18nextProvider>
   );
 }
 

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useTranslation } from 'react-i18next';
 
 interface Project {
   id: number;
@@ -19,6 +20,7 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project, index }: ProjectCardProps) {
+  const { t } = useTranslation();
   return (
     <motion.div
       className={`rounded-xl overflow-hidden bg-card border border-border ${
@@ -104,7 +106,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           
           {project.featured && (
             <Badge className="bg-primary text-primary-foreground" variant="default">
-              Featured
+              {t("Featured")}
             </Badge>
           )}
         </div>
@@ -124,14 +126,14 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         <div className="flex gap-2">
           <Button variant="default" size="sm" className="gap-2" asChild>
             <a href={project.link} target="_blank" rel="noopener noreferrer">
-              View Project
+              {t("View Project")}
               <ExternalLink className="h-4 w-4" />
             </a>
           </Button>
           
           <Button variant="outline" size="sm" className="gap-2" asChild>
             <a href="#" target="_blank" rel="noopener noreferrer">
-              Code
+              {t("Code")}
               <Github className="h-4 w-4" />
             </a>
           </Button>

@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import ThemeToggle from "@/components/ThemeToggle";
 import { Menu, X, MessageSquare } from "lucide-react";
 import Chatbot from "@/components/Chatbot";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { useTranslation } from 'react-i18next';
 
 export default function Navbar() {
+  const { t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showChat, setShowChat] = useState(false);
@@ -22,10 +24,10 @@ export default function Navbar() {
   }, []);
   
   const links = [
-    { path: "/", label: "Home" },
-    { path: "/about", label: "About" },
-    { path: "/projects", label: "Projects" },
-    { path: "/contact", label: "Contact" }
+    { path: "/", label: t("Home") },
+    { path: "/about", label: t("About") },
+    { path: "/projects", label: t("Projects") },
+    { path: "/contact", label: t("Contact") }
   ];
   
   return (
@@ -42,7 +44,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <div className="text-xl md:text-2xl font-bold gradient-text">
-              <Link href="/">Srikar Kodi</Link>
+              <Link href="/">{t("Srikar Kodi")}</Link>
             </div>
             
             {/* Desktop Navigation */}
@@ -79,7 +81,7 @@ export default function Navbar() {
                 <MessageSquare className="h-5 w-5" />
               </Button>
               
-              <ThemeToggle />
+              <LanguageSwitcher />
             </nav>
             
             {/* Mobile Menu Button */}
@@ -93,7 +95,7 @@ export default function Navbar() {
                 <MessageSquare className="h-5 w-5" />
               </Button>
               
-              <ThemeToggle />
+              <LanguageSwitcher />
               
               <Button
                 variant="ghost"
