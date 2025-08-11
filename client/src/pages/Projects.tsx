@@ -13,11 +13,12 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
-      title: t("AI-Powered Learning Platform"),
+      title: "German Lingua Hub",
       description: t("AI-Powered Learning Platform Description"),
       tags: ["React", "Node.js", "Machine Learning", "Web App"],
       image: "learning-platform",
-      link: "#",
+      link: "https://germanlinguahub-production.up.railway.app/",
+      codeLink: "https://github.com/Namidok/GermanLinguaHub",
       featured: true
     },
     {
