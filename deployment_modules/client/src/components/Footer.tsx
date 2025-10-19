@@ -65,7 +65,7 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
-            <p className="text-muted-foreground">Visakhapatnam, Andhra Pradesh, India</p>
+            <p className="text-muted-foreground">Berlin, Germany</p>
             <p className="text-muted-foreground mt-2">
               <a href="mailto:kodisrikar@gmail.com" className="hover:text-primary">
                 kodisrikar@gmail.com

@@ -1,7 +1,7 @@
 export const personalInfo = {
   name: "Srikar Kodi",
   role: "Python Developer & Data Engineer",
-  location: "Visakhapatnam, Andhra Pradesh, India",
+  location: "Berlin, Germany",
   email: "kodisrikar@gmail.com",
   about: `
     I'm a passionate Python Developer with expertise in data architecture, ETL processes, and data warehousing.

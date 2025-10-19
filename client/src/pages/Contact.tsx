@@ -241,7 +241,7 @@ export default function Contact() {
               
               <div className="mt-12 p-6 bg-card rounded-xl border border-border">
                 <h3 className="text-xl font-bold mb-4">{t("Location")}</h3>
-                <p className="text-muted-foreground mb-2">{t("Visakhapatnam, Andhra Pradesh")}</p>
+                <p className="text-muted-foreground mb-2">{t("Berlin, Germany")}</p>
                 <p className="text-muted-foreground">{t("India")}</p>
               </div>
               
