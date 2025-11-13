@@ -8,8 +8,14 @@ import { useState } from "react";
 import { useTranslation } from 'react-i18next';
 
 export default function About() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [showChat, setShowChat] = useState(false);
+
+  const resumeLink =
+    i18n.language === "de"
+      ? "https://drive.google.com/file/d/13HFB6-5DJ6jaM4NqnTGyhjDOYMghJudW/view?usp=drive_link"
+      : "https://drive.google.com/file/d/1EsBhLpeDwejqjTOajJeMXiJUnWTSOHiz/view?usp=drive_link";
+
 
   const experiences = [
     {
@@ -51,8 +57,8 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">
-              {t("About Me Title")} <span className="gradient-text">{t("Me")}</span>
+            <h1 className="gradient-text text-4xl md:text-6xl font-bold mb-6">
+              {t("About Me Title")} <span className="gradient-text"></span>
             </h1>
 
             <div className="h-1 w-20 bg-primary mb-6"></div>
@@ -75,7 +81,11 @@ export default function About() {
 
 
                 <div className="flex flex-wrap gap-4 mt-8">
-                  <a href="https://drive.google.com/file/d/1WPFbJg3arhVcQzi7AoWIOE6qn4RB0Kth/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={resumeLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Button className="button-glow">
                       <FileDown className="mr-2 h-5 w-5" /> {t("View Resume")}
                     </Button>
@@ -85,6 +95,7 @@ export default function About() {
                     {t("Ask Me Anything")}
                   </Button>
                 </div>
+
               </div>
 
               <div>
@@ -119,10 +130,9 @@ export default function About() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              "Python", "Numpy", "Pandas", "Flask",
-              "NLP", "TensorFlow", "PyTorch", "Data Visualization",
-              "SQL", "PostgreSQL", "JavaScript", "React JS",
-              "AWS", "Docker", "Kubernetes", "REST APIs", "Linux"
+              "Python", "Numpy", "Pandas", "Flask", "NLP", "TensorFlow", "PyTorch",
+              "Data Visualization", "SQL", "PostgreSQL", "JavaScript", "React JS",
+              "AWS", "Docker", "Kubernetes", "REST APIs", "Data Visualization"
             ].map((skill, index) => (
               <motion.div
                 key={skill}
@@ -183,6 +193,18 @@ export default function About() {
                   <p className="text-primary">{t("MVGR College of Engineering")}</p>
                   <p className="mt-3 text-muted-foreground">
                     {t("Focused on building a strong foundation in technical skills and electronics. Developed problem-solving abilities and project management.")}
+                  </p>
+                </motion.div>
+                <motion.div
+                  className="bg-card p-6 rounded-xl glow-border"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
+                  <p className="text-sm text-muted-foreground">2025 - Present</p>
+                  <h3 className="text-xl font-bold mt-2">{t("Masters in Computer Science with focus on Big Data and Artificial Intellingence")}</h3>
+                  <p className="text-primary">{t("SRH University of Applied Sciences, Berlin")}</p>
+                  <p className="mt-3 text-muted-foreground">
+                    {t("Specializing in Big Data and AI to enhance expertise in data-driven technologies and advanced analytics.")}
                   </p>
                 </motion.div>
 

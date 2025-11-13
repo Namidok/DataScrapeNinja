@@ -100,7 +100,7 @@ export default function Projects() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <h1 className="gradient-text text-4xl md:text-6xl font-bold mb-6">
               {t("My Projects")}
             </h1>
             

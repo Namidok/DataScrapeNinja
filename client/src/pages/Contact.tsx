@@ -95,8 +95,8 @@ export default function Contact() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              {t("Contact Title")} <span className="gradient-text">{t("Touch")}</span>
+            <h1 className="gradient-text text-4xl md:text-6xl font-bold mb-6">
+              {t("Contact Title")}
             </h1>
             
             <div className="h-1 w-20 bg-primary mb-10"></div>
@@ -138,7 +138,7 @@ export default function Contact() {
                         <FormItem>
                           <FormLabel>{t("Your Name")}</FormLabel>
                           <FormControl>
-                            <Input placeholder="John Smith" {...field} />
+                            <Input {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -152,7 +152,7 @@ export default function Contact() {
                         <FormItem>
                           <FormLabel>{t("Email Address")}</FormLabel>
                           <FormControl>
-                            <Input placeholder="your@email.com" {...field} />
+                            <Input {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -166,8 +166,7 @@ export default function Contact() {
                         <FormItem>
                           <FormLabel>{t("Message")}</FormLabel>
                           <FormControl>
-                            <Textarea 
-                              placeholder="Your message here..." 
+                            <Textarea
                               className="min-h-[150px]" 
                               {...field} 
                             />
